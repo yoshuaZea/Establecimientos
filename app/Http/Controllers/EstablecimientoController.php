@@ -102,7 +102,7 @@ class EstablecimientoController extends Controller{
         try {
             $categorias = Categoria::all();
 
-            $establecimiento = Establecimiento::find(10); // auth()->user()->establecimiento;
+            $establecimiento = auth()->user()->establecimiento;
             $establecimiento->apertura = date('H:i', strtotime($establecimiento->apertura));
             $establecimiento->cierre = date('H:i', strtotime($establecimiento->cierre));
 
